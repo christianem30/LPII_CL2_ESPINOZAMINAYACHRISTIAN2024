@@ -30,7 +30,15 @@ public class ControladorProducto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		TblProductocl2  producto = new TblProductocl2();
+		ClassProductoImp crud = new ClassProductoImp();
+		List<TblProductocl2> listadoproducto=crud.ListadoProducto();
+		//invocamos el listado de productos
+		request.setAttribute("listadodeproductos", listadoproducto);
+		//redireccionemos
+		request.getRequestDispatcher("/ListadoProductos.jsp").forward(request, response);
+		
 	}
 
 	/**
@@ -59,12 +67,12 @@ public class ControladorProducto extends HttpServlet {
 		//invocamos la metodo registrar...
 		crud.RegistrarProducto(producto);
 		//actualizamos listado
-		List<TblProductocl2> listadocliente=crud.ListadoProducto();
+		List<TblProductocl2> listadoproducto=crud.ListadoProducto();
 		//invocamos el listado de productos
-		request.setAttribute("listadodeproductos", listadocliente);
+		request.setAttribute("listadodeproductos", listadoproducto);
 		
 		//redireccionamos
-		request.getRequestDispatcher("/ListadoClientes.jsp").forward(request, response);
+		request.getRequestDispatcher("/ListadoProductos.jsp").forward(request, response);
 	
 		
 
