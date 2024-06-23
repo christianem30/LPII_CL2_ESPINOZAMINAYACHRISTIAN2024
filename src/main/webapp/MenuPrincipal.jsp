@@ -4,15 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>MENU PRINCIPAL</title>
 </head>
 <body>
-   <h2>Login Page</h2>
-    <form action="ControladorLogin" method="post">
-        Username: <input type="text" name="username"><br>
-        Password: <input type="password" name="password"><br>
-        <input type="submit" value="Login">
-    </form>
+<h1>MENU PRINCIPAL</h1>
+
+<h2 align="center">
+<a href="FormRegistrarProducto.jsp" style="text-decoration: none; color blue;">Registrar Producto</a></h2>
 
 </body>
 </html>

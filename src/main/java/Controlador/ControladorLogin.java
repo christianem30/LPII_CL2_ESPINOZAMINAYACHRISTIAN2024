@@ -1,24 +1,18 @@
 package Controlador;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Dao.ClassProductoImp;
 import Dao.ClassUsuarioImp;
-import model.TblProductocl2;
 import model.TblUsuariocl2;
 
 /**
- * Servlet implementation class ControladorUsuario
+ * Servlet implementation class ControladorLogin
  */
-public class ControladorUsuario extends HttpServlet {
-	
-	
+public class ControladorLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private ClassUsuarioImp userDAO;
 
@@ -29,7 +23,7 @@ public class ControladorUsuario extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControladorUsuario() {
+    public ControladorLogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -57,9 +51,9 @@ public class ControladorUsuario extends HttpServlet {
 
         if (userDAO.ValidarUsuario(usuario)) {
             request.setAttribute("username", username);
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/MenuPrincipal.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("login-failure.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
 	}
 

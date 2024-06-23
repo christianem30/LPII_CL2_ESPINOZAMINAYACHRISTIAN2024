@@ -13,7 +13,7 @@ public class ClassUsuarioImp implements IUsuario {
 	private EntityManagerFactory emf;
 
     public ClassUsuarioImp() {
-        emf = Persistence.createEntityManagerFactory("userPU");
+        emf = Persistence.createEntityManagerFactory("LPII_CL2_ESPINOZAMINAYACHRISTIAN");
     }
 
     public boolean ValidarUsuario(TblUsuariocl2 usuario) {
